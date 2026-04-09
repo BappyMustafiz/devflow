@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 // This is a React component — like a Vue component but just a function
 export default async function ProjectsPage() {
-    const response = await fetch('http://localhost:3000/api/projects')
+    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/projects`)
     const projects: Project[] = await response.json()
 
     return (

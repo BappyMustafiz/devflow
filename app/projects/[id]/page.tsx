@@ -2,7 +2,7 @@ import { Project } from '@/types'
 
 export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
-    const response = await fetch(`http://localhost:3000/api/projects/${id}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/projects/${id}`)
     if (!response.ok) {
         return <p>Project not found</p>
     }
