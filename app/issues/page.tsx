@@ -12,7 +12,7 @@ export default async function IssuesPage({
     const { search } = await searchParams
     // const response = await fetch('http://localhost:3000/api/issues')
     // const issues: Issue[] = await response.json()
-    const issues = await fetchData<Issue[]>(`${process.env.NEXT_PUBLIC_APP_URL}/api/issues`)
+    const issues = await fetchData<Issue[]>(`/api/issues`)
 
     const filtered = search
         ? issues.filter(issue =>
