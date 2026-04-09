@@ -10,6 +10,7 @@ export type User = {
 export type Issue = {
   id: number
   title: string
+  description: String
   status: IssueStatus
   assignee: User | null
   createdAt: Date

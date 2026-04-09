@@ -6,6 +6,7 @@ import { prisma } from '@/lib/prisma'
 
 const IssueSchema = z.object({
     title: z.string().min(3, 'Title must be at least 3 characters'),
+    description: z.string().optional(),
     status: z.enum(['open', 'in_progress', 'closed']).default('open')
 })
 
@@ -22,12 +23,12 @@ export async function createIssue(
 ): Promise<FormState> {
     const result = IssueSchema.safeParse({
         title: formData.get('title'),
+        description: formData.get('description'),
+        status: formData.get('status'),
     })
 
     if (!result.success) {
-        return {
-            errors: result.error.flatten().fieldErrors
-        }
+        return { errors: result.error.flatten().fieldErrors }
     }
 
     await prisma.issue.create({
