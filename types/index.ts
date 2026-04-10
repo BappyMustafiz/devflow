@@ -4,13 +4,14 @@ export type User = {
   id: number
   name: string
   email: string
+  password: string | null
   avatarUrl: string | null
 }
 
 export type Issue = {
   id: number
   title: string
-  description: String
+  description: string
   status: IssueStatus
   assignee: User | null
   createdAt: Date

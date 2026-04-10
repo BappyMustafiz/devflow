@@ -67,15 +67,15 @@ export default async function DashboardPage() {
                             className="flex items-center gap-3 px-4 py-2.5 border-b border-border last:border-0 hover:bg-muted/50 transition-colors"
                         >
                             <div className={`w-2 h-2 rounded-full flex-shrink-0 ${issue.status === 'open' ? 'bg-green-500' :
-                                    issue.status === 'in_progress' ? 'bg-amber-500' :
-                                        'bg-muted-foreground'
+                                issue.status === 'in_progress' ? 'bg-amber-500' :
+                                    'bg-muted-foreground'
                                 }`} />
                             <span className="flex-1 text-sm">{issue.title}</span>
                             <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${issue.status === 'open' ? 'bg-green-50 text-green-700' :
-                                    issue.status === 'in_progress' ? 'bg-amber-50 text-amber-700' :
-                                        'bg-muted text-muted-foreground'
+                                issue.status === 'in_progress' ? 'bg-amber-50 text-amber-700' :
+                                    'bg-muted text-muted-foreground'
                                 }`}>
-                                {issue.status.replace('_', ' ')}
+                                {issue.status.replace('_', ' ') ?? 'unknown'}
                             </span>
                             <span className="text-xs text-muted-foreground">
                                 {new Date(issue.createdAt).toLocaleDateString()}

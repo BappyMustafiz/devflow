@@ -31,12 +31,12 @@ export default async function IssueDetailPage({
                     <div className="flex items-start justify-between gap-4">
                         <h1 className="text-lg font-medium">{issue.title}</h1>
                         <span className={`text-xs px-2 py-1 rounded-full font-medium flex-shrink-0 ${issue.status === 'open'
-                                ? 'bg-green-50 text-green-700'
-                                : issue.status === 'in_progress'
-                                    ? 'bg-amber-50 text-amber-700'
-                                    : 'bg-muted text-muted-foreground'
+                            ? 'bg-green-50 text-green-700'
+                            : issue.status === 'in_progress'
+                                ? 'bg-amber-50 text-amber-700'
+                                : 'bg-muted text-muted-foreground'
                             }`}>
-                            {issue.status.replace('_', ' ')}
+                            {issue.status.replace('_', ' ') ?? 'unknown'}
                         </span>
                     </div>
                     {issue.description && (
@@ -63,7 +63,7 @@ export default async function IssueDetailPage({
                     </div>
                     <div>
                         <p className="text-xs text-muted-foreground mb-1">Status</p>
-                        <p className="capitalize">{issue.status.replace('_', ' ')}</p>
+                        <p className="capitalize">{issue.status.replace('_', ' ') ?? 'unknown'}</p>
                     </div>
                 </div>
 

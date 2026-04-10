@@ -68,7 +68,7 @@ export default async function IssuesPage({
                                     ? 'bg-amber-50 text-amber-700'
                                     : 'bg-muted text-muted-foreground'
                                 }`}>
-                                {issue.status.replace('_', ' ')}
+                                {issue.status.replace('_', ' ') ?? 'unknown'}
                             </span>
                             <span className="text-xs text-muted-foreground">
                                 {new Date(issue.createdAt).toLocaleDateString()}

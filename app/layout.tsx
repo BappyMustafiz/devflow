@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { SessionProvider } from 'next-auth/react'
+import Providers from '@/components/Providers'
 import Header from '@/components/Header'
 import './globals.css'
 
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-muted/30">
-        <SessionProvider>
+        <Providers>
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-1">
@@ -28,7 +28,7 @@ export default function RootLayout({
               <span>© 2026</span>
             </footer>
           </div>
-        </SessionProvider>
+        </Providers>
       </body>
     </html>
   )
